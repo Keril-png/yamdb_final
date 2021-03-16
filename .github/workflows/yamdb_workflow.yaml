@@ -63,7 +63,6 @@ jobs:
         script: |
           cd api_yamdb
           sudo touch .env
-          export SECRET_KEY=${{ secrets.SECRET_KEY }}
           export DB_ENGINE=${{ secrets.DB_ENGINE }}
           export DB_NAME=${{ secrets.DB_NAME }}
           export POSTGRES_USER=${{ secrets.POSTGRES_USER }}
