@@ -1,26 +1,20 @@
-import secrets
-import string
 
 from django.contrib.auth.tokens import default_token_generator
-from django.core.exceptions import ObjectDoesNotExist, ValidationError
 from django.core.mail import send_mail
-from django.shortcuts import get_object_or_404, render
-from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import filters, mixins, permissions, status, viewsets
-from rest_framework.decorators import action, api_view, permission_classes
-from rest_framework.generics import get_object_or_404
+from django.shortcuts import get_object_or_404
+from rest_framework import filters, mixins, status, viewsets
+from rest_framework.decorators import action
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import (AllowAny, IsAuthenticated,
                                         IsAuthenticatedOrReadOnly)
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from rest_framework_jwt.settings import api_settings
-from rest_framework_simplejwt.tokens import RefreshToken, AccessToken
+from rest_framework_simplejwt.tokens import AccessToken
 
-from .api_filters import *
-from .models import *
-from .permissions import *
-from .serializers import *
+from .api_filters import TitleFilter, 
+from .models import CustomUser, Category, Genre, Title, Review, Comment
+from .permissions import IsAdminPermission, IsAdminOrReadOnly, IsAuthorOrModeratorOrAdmin
+from .serializers import UserCreationSerializer, LoggingUserSerializer, CategorySerializer, GenreSerializer, TitleSerializer, TitleEditSerializer, ReviewSerializer, CommentSerializer
 
 
 class SendConfirmationCodeView(APIView):
