@@ -13,8 +13,12 @@ from rest_framework_simplejwt.tokens import AccessToken
 
 from .api_filters import TitleFilter
 from .models import CustomUser, Category, Genre, Title, Review
-from .permissions import IsAdminPermission, IsAdminOrReadOnly, IsAuthorOrModeratorOrAdmin
-from .serializers import CustomUserSerializer, UserCreationSerializer, LoggingUserSerializer, CategorySerializer, GenreSerializer, TitleSerializer, TitleEditSerializer, ReviewSerializer, CommentSerializer
+from .permissions import IsAdminPermission, \
+    IsAdminOrReadOnly, IsAuthorOrModeratorOrAdmin
+from .serializers import CustomUserSerializer, UserCreationSerializer, \
+    LoggingUserSerializer, CategorySerializer, GenreSerializer, \
+        TitleSerializer, TitleEditSerializer, \
+            ReviewSerializer, CommentSerializer
 
 
 class SendConfirmationCodeView(APIView):
