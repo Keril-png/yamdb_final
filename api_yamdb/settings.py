@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import django
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.environ.get('DB_ENGINE'),
+        'ENGINE': 'django.db.backends.postgresql' ,
         'NAME': os.environ.get('DB_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
