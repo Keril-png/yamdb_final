@@ -29,18 +29,29 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='comment',
             name='pub_date',
-            field=models.DateTimeField(auto_now_add=True, default=django.utils.timezone.now, verbose_name='Дата и время'),
+            field=models.DateTimeField(
+                auto_now_add=True,
+                default=django.utils.timezone.now,
+                verbose_name='Дата и время'),
             preserve_default=False,
         ),
         migrations.AlterField(
             model_name='comment',
             name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to=settings.AUTH_USER_MODEL, verbose_name='Автор'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='comments',
+                to=settings.AUTH_USER_MODEL,
+                verbose_name='Автор'),
         ),
         migrations.AlterField(
             model_name='comment',
             name='review',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='comments', to='api.Review', verbose_name='Оценка'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='comments',
+                to='api.Review',
+                verbose_name='Оценка'),
         ),
         migrations.AlterField(
             model_name='comment',
@@ -50,17 +61,26 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='author',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to=settings.AUTH_USER_MODEL, verbose_name='Автор'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='reviews',
+                to=settings.AUTH_USER_MODEL,
+                verbose_name='Автор'),
         ),
         migrations.AlterField(
             model_name='review',
             name='pub_date',
-            field=models.DateTimeField(auto_now_add=True, verbose_name='Дата и время'),
+            field=models.DateTimeField(
+                auto_now_add=True, verbose_name='Дата и время'),
         ),
         migrations.AlterField(
             model_name='review',
             name='score',
-            field=models.PositiveSmallIntegerField(validators=[django.core.validators.MinValueValidator(1), django.core.validators.MaxValueValidator(10)], verbose_name='Оценка'),
+            field=models.PositiveSmallIntegerField(
+                validators=[
+                    django.core.validators.MinValueValidator(1),
+                    django.core.validators.MaxValueValidator(10)],
+                verbose_name='Оценка'),
         ),
         migrations.AlterField(
             model_name='review',
@@ -70,7 +90,11 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='review',
             name='title',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='reviews', to='api.Title', verbose_name='Произведение'),
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name='reviews',
+                to='api.Title',
+                verbose_name='Произведение'),
         ),
         migrations.AlterUniqueTogether(
             name='review',

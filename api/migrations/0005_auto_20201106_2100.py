@@ -22,11 +22,28 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='customuser',
             name='role',
-            field=models.CharField(choices=[('user', 'User'), ('moderator', 'Moderator'), ('admin', 'Admin')], default='user', max_length=20),
+            field=models.CharField(
+                choices=[
+                    ('user',
+                     'User'),
+                    ('moderator',
+                     'Moderator'),
+                    ('admin',
+                     'Admin')],
+                default='user',
+                max_length=20),
         ),
         migrations.AlterField(
             model_name='customuser',
             name='username',
-            field=models.CharField(error_messages={'unique': 'A user with that username already exists.'}, help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.', max_length=150, unique=True, validators=[django.contrib.auth.validators.UnicodeUsernameValidator()], verbose_name='username'),
+            field=models.CharField(
+                error_messages={
+                    'unique': 'A user with that username already exists.'},
+                help_text='Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.',
+                max_length=150,
+                unique=True,
+                validators=[
+                    django.contrib.auth.validators.UnicodeUsernameValidator()],
+                verbose_name='username'),
         ),
     ]

@@ -23,7 +23,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='title',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='titles_of_category', to='api.Category'),
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name='titles_of_category',
+                to='api.Category'),
         ),
         migrations.AlterField(
             model_name='title',
@@ -33,7 +38,12 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='title',
             name='genre',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='titles_of_genre', to='api.Genre'),
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name='titles_of_genre',
+                to='api.Genre'),
         ),
         migrations.AlterField(
             model_name='title',

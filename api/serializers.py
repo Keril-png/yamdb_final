@@ -74,7 +74,8 @@ class TitleEditSerializer(serializers.ModelSerializer):
 
 class ReviewSerializer(serializers.ModelSerializer):
     title = serializers.SlugRelatedField(slug_field='pk', read_only='True')
-    author = serializers.SlugRelatedField(slug_field='username', read_only='True')
+    author = serializers.SlugRelatedField(
+        slug_field='username', read_only='True')
 
     def validate(self, data):
         method = self.context["request"].method
@@ -95,7 +96,8 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 
 class CommentSerializer(serializers.ModelSerializer):
-    author = serializers.SlugRelatedField(slug_field='username', read_only=True)
+    author = serializers.SlugRelatedField(
+        slug_field='username', read_only=True)
     review = serializers.SlugRelatedField(slug_field='pk', read_only=True)
 
     class Meta:

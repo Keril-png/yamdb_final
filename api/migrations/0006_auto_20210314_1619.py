@@ -15,21 +15,34 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='comment',
             name='pub_date',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Дата и время публикации'),
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                verbose_name='Дата и время публикации'),
         ),
         migrations.AlterField(
             model_name='review',
             name='pub_date',
-            field=models.DateTimeField(auto_now_add=True, db_index=True, verbose_name='Дата и время публикации'),
+            field=models.DateTimeField(
+                auto_now_add=True,
+                db_index=True,
+                verbose_name='Дата и время публикации'),
         ),
         migrations.AlterField(
             model_name='title',
             name='category',
-            field=models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='titles', to='api.Category'),
+            field=models.ForeignKey(
+                blank=True,
+                null=True,
+                on_delete=django.db.models.deletion.SET_NULL,
+                related_name='titles',
+                to='api.Category'),
         ),
         migrations.AlterField(
             model_name='title',
             name='year',
-            field=models.PositiveIntegerField(db_index=True, validators=[django.core.validators.MaxValueValidator(2021)]),
+            field=models.PositiveIntegerField(
+                db_index=True, validators=[
+                    django.core.validators.MaxValueValidator(2021)]),
         ),
     ]

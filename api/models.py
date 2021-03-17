@@ -78,7 +78,10 @@ class Review(models.Model):
             MaxValueValidator(10)
         ]
     )
-    pub_date = models.DateTimeField('Дата и время публикации', auto_now_add=True, db_index=True)
+    pub_date = models.DateTimeField(
+        'Дата и время публикации',
+        auto_now_add=True,
+        db_index=True)
 
     class Meta:
         ordering = ['-pub_date']
@@ -95,7 +98,10 @@ class Comment(models.Model):
     author = models.ForeignKey(CustomUser, on_delete=models.CASCADE,
                                related_name='comments', verbose_name='Автор')
     text = models.TextField('Комментарий к оценке')
-    pub_date = models.DateTimeField('Дата и время публикации', auto_now_add=True, db_index=True)
+    pub_date = models.DateTimeField(
+        'Дата и время публикации',
+        auto_now_add=True,
+        db_index=True)
 
     class Meta:
         ordering = ['-pub_date']

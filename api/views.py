@@ -72,7 +72,8 @@ class UserViewSet(viewsets.ModelViewSet):
             serializer = CustomUserSerializer(request.user)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
-        serializer = CustomUserSerializer(request.user, data=request.data, partial=True)
+        serializer = CustomUserSerializer(
+            request.user, data=request.data, partial=True)
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
@@ -122,7 +123,9 @@ class TitleViewSet(viewsets.ModelViewSet):
 
 class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly, IsAuthorOrModeratorOrAdmin)
+    permission_classes = (
+        IsAuthenticatedOrReadOnly,
+        IsAuthorOrModeratorOrAdmin)
 
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
@@ -137,7 +140,9 @@ class ReviewViewSet(viewsets.ModelViewSet):
 
 class CommentViewSet(viewsets.ModelViewSet):
     serializer_class = CommentSerializer
-    permission_classes = (IsAuthenticatedOrReadOnly, IsAuthorOrModeratorOrAdmin)
+    permission_classes = (
+        IsAuthenticatedOrReadOnly,
+        IsAuthorOrModeratorOrAdmin)
 
     def get_queryset(self):
         title_id = self.kwargs.get('title_id')
