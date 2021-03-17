@@ -17,8 +17,8 @@ from .permissions import IsAdminPermission, \
     IsAdminOrReadOnly, IsAuthorOrModeratorOrAdmin
 from .serializers import CustomUserSerializer, UserCreationSerializer, \
     LoggingUserSerializer, CategorySerializer, GenreSerializer, \
-        TitleSerializer, TitleEditSerializer, \
-            ReviewSerializer, CommentSerializer
+    TitleSerializer, TitleEditSerializer, ReviewSerializer, \
+    CommentSerializer
 
 
 class SendConfirmationCodeView(APIView):

@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 
 from .views import UserViewSet, CategoryViewSet, \
     GenreViewSet, TitleViewSet, ReviewViewSet, CommentViewSet, \
-        SendConfirmationCodeView, GetTokenAPIView
+    SendConfirmationCodeView, GetTokenAPIView
 
 api_router = DefaultRouter()
 api_router.register('users', UserViewSet, basename='customuser')
@@ -15,7 +15,7 @@ api_router.register(
     ReviewViewSet,
     basename='reviews')
 api_router.register(
-    r'titles/(?P<title_id>\d+)/reviews/(?P<review_id>\d+)/comments', 
+    r'titles/(?P<title_id>\d+)/reviews/(?P<review_id>\d+)/comments',
     CommentViewSet,
     basename='comments')
 
