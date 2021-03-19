@@ -1,4 +1,3 @@
-# версия docker-compose
 version: '3.8'
 
 volumes:
@@ -7,7 +6,6 @@ volumes:
   media:
   nginx_conf:
 
-# имена и описания контейнеров, которые должны быть развёрнуты
 services:
   db:
     image: postgres:12.4
