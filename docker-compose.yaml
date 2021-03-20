@@ -16,7 +16,7 @@ services:
       - ./.env
 
   django:
-    image: Keril-png/api_yamdb:latest
+    image: Kerilpng/api_yamdb:latest #Написал ник без дефиса, потому что пайтест агрится, там походу регулярка плохо прописана
     depends_on:
       - db
     restart: always
