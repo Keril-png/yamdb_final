@@ -16,7 +16,7 @@ services:
       - ./.env
 
   django:
-    image: matakov/yamdb:latest
+    image: Keril-png/api_yamdb:latest
     depends_on:
       - db
     restart: always
@@ -33,8 +33,8 @@ services:
     ports:
       - "80:80"
     volumes:
-      - static:/code/static
-      - media:/code/media
+      - static://var/html/
+      - media:/var/html/
       - nginx_conf:/etc/nginx/conf.d/
     depends_on:
       - django
