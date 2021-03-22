@@ -67,28 +67,15 @@ jobs:
         script: |
           cd api_yamdb
           sudo touch .env
-          export DB_ENGINE=${{ secrets.DB_ENGINE }}
-          export DB_NAME=${{ secrets.DB_NAME }}
-          export POSTGRES_USER=${{ secrets.POSTGRES_USER }}
-          export POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
-          export DB_HOST=${{ secrets.DB_HOST }}
-          export DB_PORT=${{ secrets.DB_PORT }}
+          
           docker-compose stop
+
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
+          sudo docker stop ${{ secrets.DOCKER_USERNAME }}/api_yamdb
+          sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/api_yamdb    
+          sudo docker run ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
+
           docker-compose up -d --force-recreate --build
-          docker-compose exec web python manage.py migrate --noinput
-          docker-compose exec web python manage.py collectstatic --no-input
-
-    - name: stop old image
-      run: sudo docker stop ${{ secrets.DOCKER_USERNAME }}/api_yamdb
-
-    - name: remove old image
-      run: sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/api_yamdb
-
-    - name: pull image
-      run: sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
-    
-    - name: stop old image
-      run: sudo docker run ${{ secrets.DOCKER_USERNAME }}/api_yamdb
 
 
   send_message:
