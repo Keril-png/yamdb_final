@@ -1,0 +1,88 @@
+ServerRunTests: 
+
+```
+./api_yamdb/settings.py:11:1: F401 'django' imported but unused
+./api/serializers.py:2:1: F401 'rest_framework.permissions' imported but unused
+./api/serializers.py:4:1: F403 'from .models import *' used; unable to detect undefined names
+./api/serializers.py:10:17: F405 'CustomUser' may be undefined, or defined from star imports: .models
+./api/serializers.py:34:17: F405 'Category' may be undefined, or defined from star imports: .models
+./api/serializers.py:41:17: F405 'Genre' may be undefined, or defined from star imports: .models
+./api/serializers.py:51:17: F405 'Title' may be undefined, or defined from star imports: .models
+./api/serializers.py:60:18: F405 'Category' may be undefined, or defined from star imports: .models
+./api/serializers.py:65:18: F405 'Genre' may be undefined, or defined from star imports: .models
+./api/serializers.py:72:17: F405 'Title' may be undefined, or defined from star imports: .models
+./api/serializers.py:88:12: F405 'Review' may be undefined, or defined from star imports: .models
+./api/serializers.py:95:17: F405 'Review' may be undefined, or defined from star imports: .models
+./api/serializers.py:105:17: F405 'Comment' may be undefined, or defined from star imports: .models
+./api/views.py:1:1: F401 'secrets' imported but unused
+./api/views.py:2:1: F401 'string' imported but unused
+./api/views.py:5:1: F401 'django.core.exceptions.ObjectDoesNotExist' imported but unused
+./api/views.py:5:1: F401 'django.core.exceptions.ValidationError' imported but unused
+./api/views.py:7:1: F401 'django.shortcuts.render' imported but unused
+./api/views.py:8:1: F401 'django_filters.rest_framework.DjangoFilterBackend' imported but unused
+./api/views.py:9:1: F401 'rest_framework.permissions' imported but unused
+./api/views.py:10:1: F401 'rest_framework.decorators.api_view' imported but unused
+./api/views.py:10:1: F401 'rest_framework.decorators.permission_classes' imported but unused
+./api/views.py:11:1: F811 redefinition of unused 'get_object_or_404' from line 7
+./api/views.py:17:1: F401 'rest_framework_jwt.settings.api_settings' imported but unused
+./api/views.py:18:1: F401 'rest_framework_simplejwt.tokens.RefreshToken' imported but unused
+./api/views.py:20:1: F403 'from .api_filters import *' used; unable to detect undefined names
+./api/views.py:21:1: F403 'from .models import *' used; unable to detect undefined names
+./api/views.py:22:1: F403 'from .permissions import *' used; unable to detect undefined names
+./api/views.py:23:1: F403 'from .serializers import *' used; unable to detect undefined names
+./api/views.py:27:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:30:22: F405 'UserCreationSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:34:25: F405 'CustomUser' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:44:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:47:22: F405 'LoggingUserSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:51:34: F405 'CustomUser' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:60:16: F405 'CustomUser' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:61:24: F405 'CustomUserSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:62:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:62:27: F405 'IsAdminPermission' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:72:26: F405 'CustomUserSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:75:22: F405 'CustomUserSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:92:16: F405 'Category' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:93:24: F405 'CategorySerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:94:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:94:27: F405 'IsAdminOrReadOnly' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:103:16: F405 'Genre' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:104:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:104:27: F405 'IsAdminOrReadOnly' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:105:24: F405 'GenreSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:113:16: F405 'Title' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:114:23: F405 'TitleFilter' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:115:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:115:27: F405 'IsAdminOrReadOnly' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:120:20: F405 'TitleSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:121:16: F405 'TitleEditSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:125:24: F405 'ReviewSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:126:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:128:9: F405 'IsAuthorOrModeratorOrAdmin' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:132:35: F405 'Title' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:137:35: F405 'Title' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:142:24: F405 'CommentSerializer' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:143:5: F811 redefinition of unused 'permission_classes' from line 10
+./api/views.py:145:9: F405 'IsAuthorOrModeratorOrAdmin' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:150:36: F405 'Review' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/views.py:157:36: F405 'Review' may be undefined, or defined from star imports: .api_filters, .models, .permissions, .serializers
+./api/urls.py:4:1: F403 'from .views import *' used; unable to detect undefined names
+./api/urls.py:7:30: F405 'UserViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:8:35: F405 'CategoryViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:9:31: F405 'GenreViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:10:31: F405 'TitleViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:13:5: F405 'ReviewViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:16:70: F405 'CommentViewSet' may be undefined, or defined from star imports: .views
+./api/urls.py:16:80: E501 line too long (84 > 79 characters)
+./api/urls.py:20:20: F405 'SendConfirmationCodeView' may be undefined, or defined from star imports: .views
+./api/urls.py:21:20: F405 'GetTokenAPIView' may be undefined, or defined from star imports: .views
+./api/models.py:3:1: F401 'django.contrib.auth.get_user_model' imported but unused
+./api/models.py:26:80: E501 line too long (80 > 79 characters)
+./api/permissions.py:6:39: W504 line break after binary operator
+./api/permissions.py:12:39: W504 line break after binary operator
+./api/permissions.py:13:60: W504 line break after binary operator
+./api/permissions.py:19:60: W504 line break after binary operator
+./api/permissions.py:20:80: E501 line too long (108 > 79 characters)
+./api/tests.py:1:1: F401 'django.test.TestCase' imported but unused
+================== Приведите код в соответствие с PEP8 ==================
+```

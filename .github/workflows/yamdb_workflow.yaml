@@ -66,16 +66,10 @@ jobs:
         key: ${{ secrets.SSH_KEY }}
         script: |
           cd api_yamdb
-          sudo touch .env
           
-          docker-compose stop
-
           sudo docker pull ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
-          sudo docker stop ${{ secrets.DOCKER_USERNAME }}/api_yamdb
-          sudo docker rmi ${{ secrets.DOCKER_USERNAME }}/api_yamdb    
+          docker-compose down   
           sudo docker run ${{ secrets.DOCKER_USERNAME }}/api_yamdb:latest
-
-          docker-compose up -d --force-recreate --build
 
 
   send_message:
